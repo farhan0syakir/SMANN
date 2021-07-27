@@ -1,7 +1,7 @@
 # Simple Memory Augmented Neural Network (SMANN) for trajectory prediction for Autonomous driving
 
 ## config file
-runner/model_kitti.yaml
+runner/model.yaml
 
 ## usage
 ```
