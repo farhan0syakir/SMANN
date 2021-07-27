@@ -1,7 +1,5 @@
 from torch.utils.data import DataLoader
 import dataset_pytorch
-from tqdm import tqdm
-import matplotlib.pyplot as plt
 import os
 import sys
 sys.path.append('..')
@@ -9,14 +7,12 @@ sys.path.append('..')
 import numpy as np
 import pandas as pd
 import torch
-from l5kit.configs import load_config_data
 from tqdm import tqdm
 
 from model.autoencoder import AutoEncoder
-from utils.dataset_loader import load_dataset, pytorch_neg_multi_log_likelihood_single
+from utils import pytorch_neg_multi_log_likelihood_single, load_config_data
 
-
-def forward(model, past, future, scene_one_hot, device, criterion=pytorch_neg_multi_log_likelihood_single):
+def forward(model, past, future, _, device, criterion=pytorch_neg_multi_log_likelihood_single):
     bs, num_pred, _ = future.size()
     past_encoded = model.past_encoder(past)
     future_encoded = model.future_encoder(future)

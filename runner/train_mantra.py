@@ -7,7 +7,6 @@ from torch import nn
 import numpy as np
 import pandas as pd
 import torch
-from l5kit.configs import load_config_data
 from torch import optim
 from tqdm import tqdm
 from datetime import datetime
@@ -16,7 +15,7 @@ from model.autoencoder import MemoryAutoEncoder
 from model.controller import MemoryController
 from model.mantra import Mantra
 from model.resnet18_with_memory import Resnet18WithMemory
-from utils.dataset_loader import load_dataset, pytorch_neg_multi_log_likelihood_batch
+from utils import pytorch_neg_multi_log_likelihood_batch, load_config_data
 
 import dataset_pytorch
 from torch.utils.data import DataLoader

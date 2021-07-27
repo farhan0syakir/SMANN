@@ -6,7 +6,6 @@ sys.path.append('..')
 import numpy as np
 import pandas as pd
 import torch
-from l5kit.configs import load_config_data
 from torch import optim
 from tqdm import tqdm
 
@@ -14,6 +13,7 @@ from model.autoencoder import MemoryAutoEncoder
 from model.controller import MemoryController
 import dataset_pytorch
 from torch.utils.data import DataLoader
+from utils import load_config_data
 
 
 def loss_controller(controller_output, xf, xf_hat, device='cpu'):
